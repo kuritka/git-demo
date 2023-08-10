@@ -1,0 +1,20 @@
+# Ignore everything
+*
+# But not these files...
+!/.gitignore
+!/.gitleaks.toml
+
+!*.tf
+!*.tfvars
+!Makefile
+
+!modules/rke/cloudinit/metadata.yaml.tpl
+!.github/workflows/gitleaks.yml
+
+!CODEOWNERS
+!README.md
+!/**/README.md
+/*/**/.terraform/**/README.md
+
+# ...even if they are in subdirectories
+!*/
