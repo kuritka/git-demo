@@ -1,13 +1,20 @@
 
+ifneq ($(wildcard ./.env),)
+	include .env
+	export
+endif
+
 check:
 	terraform fmt
 
 run: check
 	$(call terraform)
 
-
 apply:
 	terraform apply "out.plan"
+
+destroy:
+	terraform destroy
 
 define terraform
 	terraform init \

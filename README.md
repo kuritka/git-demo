@@ -4,41 +4,21 @@
 details: https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs
 
 
-- clone project
-- userB: create branch BKS-AAA-userB-update README.md
-- userB: update REAMDE.md
-- userB: PR
-
-- userA: git pull
-- create branch BKS-XYZ-userA-create-secret
-- create branch BKS-XWZ-userB-update README.md
- - XYZ: implement secret
- - XYZ: implement secret
- - XYZ: implement secret
-
- - XWZ: immplement README
- - XWZ: make PR
- - XWZ: --amend change
- - XWZ: make PR
-
- - XYZ: Squash commit 
- - XYZ: rebase 
- - XYZ: make PR 
-
-todo:
- git reset --hard XXXX
-
-Optionally: git stash, merge conflicts 
+```.env
+TF_VAR_credentials_name="user"
+TF_VAR_credentials_password="Pa$$w0rd"
+```
 
 ```shell
 resource "kubernetes_secret" "example" {
   metadata {
-    name = "basic-auth"
+    name      = "basic-auth"
+    namespace = kubernetes_namespace.example.metadata[0].name
   }
 
   data = {
-    username = "admin"
-    password = "P4ssw0rd"
+    username = var.credentials_name
+    password = var.credentials_password
   }
 
   type = "kubernetes.io/basic-auth"
