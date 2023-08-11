@@ -2,7 +2,7 @@
 
 ## Terraform provider
 details: https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs
-
+link to presentation: https://docs.google.com/presentation/d/1NYNGrSskE2lPTYKnqfjh7uaQHhxaKVBLqdWzl0XA72k/edit?usp=sharing
 
 ```.env
 TF_VAR_credentials_name="user"
