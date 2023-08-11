@@ -1,8 +1,9 @@
 # GitHub DEM⭕
 
 ## Terraform provider
-details: https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs
-link to presentation: https://docs.google.com/presentation/d/1NYNGrSskE2lPTYKnqfjh7uaQHhxaKVBLqdWzl0XA72k/edit?usp=sharing
+Details: https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs
+Link to presentation: https://docs.google.com/presentation/d/1NYNGrSskE2lPTYKnqfjh7uaQHhxaKVBLqdWzl0XA72k/edit?usp=sharing
+Link to Github: https://github.com/kuritka/git-demo
 
 ```.env
 TF_VAR_credentials_name="user"
