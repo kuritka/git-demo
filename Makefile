@@ -7,18 +7,16 @@ endif
 check:
 	terraform fmt
 
-run: check
-	$(call terraform)
+init: check
+	terraform init \
+		-backend-config "key=tfstate/k8s-state.tfstate" \
+		-backend-config "bucket=tf-state" -reconfigure
+
+plan:
+	terraform plan -out out.plan
 
 apply:
 	terraform apply "out.plan"
 
 destroy:
 	terraform destroy
-
-define terraform
-	terraform init \
-		-backend-config "key=tfstate/k8s-state.tfstate" \
-		-backend-config "bucket=tf-state" -reconfigure
-	terraform plan -out out.plan
-endef
