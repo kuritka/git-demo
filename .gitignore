@@ -8,6 +8,7 @@
 !*.tfvars
 !Makefile
 
+!/.github/workflows/*.yaml
 !modules/rke/cloudinit/metadata.yaml.tpl
 !.github/workflows/gitleaks.yml
 
