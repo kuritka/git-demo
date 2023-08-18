@@ -3,9 +3,9 @@ name: 'Terraform-cicd'
 # Runs your workflow when you push a commit
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+#    branches: [ "main" ]
+#  pull_request:
+#    branches: [ "main" ]
 
 permissions:
   contents: read
