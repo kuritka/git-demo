@@ -1,0 +1,37 @@
+name: 'Terraform-cicd'
+
+# Runs your workflow when you push a commit
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  terraform-infra:
+    name: 'Terraform-cicd'
+    runs-on: ubuntu-latest
+    environment: dev
+    # needs: checkov-checks
+    # if: ${{ needs.checkov-checks.outputs.checkov-passed == 'true' }}
+
+    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      # Checkout the repository to the GitHub Actions runner
+      - name: Checkout
+        uses: actions/checkout@v3
+
+
+      # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
+      # reference - https://github.com/hashicorp/setup-terraform
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          cli_config_credentials_token: ${{ secrets.TERROFORM_TOKEN }}
