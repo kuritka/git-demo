@@ -1,0 +1,21 @@
+name: 'Terraform-cicd'
+
+# Runs your workflow when you push a commit
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  tflint-checks: # TFLint tool for linter
+
+  tfsec-checks: # tfsec for security vulnerabilities
+
+  checkov-checks: # static analysis tool
+
+  terraform-infra: # workflow to provison the structure
+  # Assuming this is already defined.
