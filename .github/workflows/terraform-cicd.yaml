@@ -3,9 +3,6 @@ name: 'Terraform-cicd'
 # Runs your workflow when you push a commit
 on:
   push:
-#    branches: [ "main" ]
-#  pull_request:
-#    branches: [ "main" ]
 
 permissions:
   contents: read
@@ -14,9 +11,6 @@ jobs:
   terraform-infra:
     name: 'Terraform-cicd'
     runs-on: ubuntu-latest
-    environment: dev
-    # needs: checkov-checks
-    # if: ${{ needs.checkov-checks.outputs.checkov-passed == 'true' }}
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
