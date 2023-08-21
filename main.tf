@@ -1,9 +1,4 @@
 
-provider "kubernetes" {
-  config_path    = "~/.kube/config"
-  config_context = "k3d-platform"
-}
-
 variable "credentials_name" {
   description = "secret name"
   type        = string
