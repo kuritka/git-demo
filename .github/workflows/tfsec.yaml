@@ -3,13 +3,9 @@ on:
   push:
 
 jobs:
-  tfsec-checks:
-    name: 'tfsec-checks'
+  tfsec:
     runs-on: ubuntu-latest
-
-    # tflint-checks need to be checked first
-    needs: tflint-checks
-    if: ${{ needs.tflint-checks.outputs.tflint-passed == 'true' }}
+    name: 'tfsec-checks'
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
