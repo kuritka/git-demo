@@ -30,5 +30,9 @@ jobs:
           # https://github.com/terraform-linters/tflint/blob/master/docs/user-guide/plugins.md#avoiding-rate-limiting
           GITHUB_TOKEN: ${{ github.token }}
 
+      # Run tflint command in each directory recursively # use --force if you want to continue with workflow although errors are there
       - name: Run TFLint
-        run: tflint -f compact
+        run: tflint -f compact --recursive
+
+    outputs:
+      tflint-passed: true
