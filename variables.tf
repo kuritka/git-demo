@@ -5,7 +5,7 @@ variable "credentials_name" {
 }
 
 variable "credentials_password" {
-  description = "secret password"
+  description = "secret password 123"
   type        = string
   sensitive   = true
 }
