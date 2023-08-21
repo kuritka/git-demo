@@ -6,6 +6,7 @@ endif
 
 check:
 	terraform fmt
+	tflint -f compact --recursive
 
 init: check
 	terraform init \
