@@ -3,9 +3,9 @@ on:
   push:
 
 jobs:
-  tfsec-checks:
-    name: 'tfsec-checks'
+  tfsec:
     runs-on: ubuntu-latest
+    name: 'tfsec-checks'
 
     # tflint-checks need to be checked first
     needs: tflint-checks
