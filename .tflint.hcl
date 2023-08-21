@@ -1,12 +1,12 @@
 # Reference: https://github.com/terraform-linters/tflint
-# GCP Reference: https://github.com/terraform-linters/tflint-ruleset-google
 # On local to initialize a configuration file for TFLint in your Terraform project: tflint --init
-plugin "google" {
+plugin "aws" {
   enabled = true
-  version = "0.24.0"
-  source  = "github.com/terraform-linters/tflint-ruleset-google"
+  version = "0.26.0"
+  source  = "github.com/terraform-linters/tflint-ruleset-aws"
 }
-#plugin "terraform" {
-#  enabled = true
-#  preset  = "recommended"
-#}
+plugin "terraform" {
+  enabled = true
+  version = "0.4.0"
+  source  = "github.com/terraform-linters/tflint-ruleset-terraform"
+}

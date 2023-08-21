@@ -1,4 +1,4 @@
-name: 'Terraform-cicd'
+name: tffmt
 
 # Runs your workflow when you push a commit
 on:

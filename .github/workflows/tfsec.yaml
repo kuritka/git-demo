@@ -1,0 +1,30 @@
+name: tfsec
+on:
+  push:
+
+jobs:
+  tfsec-checks:
+    name: 'tfsec-checks'
+    runs-on: ubuntu-latest
+
+    # tflint-checks need to be checked first
+    needs: tflint-checks
+    if: ${{ needs.tflint-checks.outputs.tflint-passed == 'true' }}
+
+    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      # Checkout the repository to the GitHub Actions runner
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Tfsec - Security scanner for your Terraform code
+      # Reference - https://github.com/aquasecurity/tfsec-action
+      - name: Run Tfsec
+        uses: aquasecurity/tfsec-action@v1.0.0
+
+    outputs:
+      tfsec-passed: true
