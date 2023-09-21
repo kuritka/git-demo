@@ -1,5 +1,10 @@
 
 
+resource "random_integer" "s3" {
+  min = 1000
+  max = 9999
+}
+
 resource "kubernetes_namespace" "example" {
   metadata {
     name = "my-first-k8s-namespace"

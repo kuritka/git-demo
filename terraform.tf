@@ -6,8 +6,16 @@ terraform {
       source  = "hashicorp/kubernetes"
       version = "~> 2.0"
     }
-  }
 
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.0"
+    }
+  }
+}
+
+provider "random" {
+  # Configuration options 222
 }
 
 provider "kubernetes" {
